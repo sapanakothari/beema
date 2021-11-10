@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: localhost
+  port: 5432
+
+#beemape_development
+development:
+  <<: *default
+  url: <%= ENV['DB_URL'] %>
+
+test:
+  <<: *default
+  url: <%= ENV['DB_URL'] %>
+
+staging:
+  url: <%= ENV['DB_URL'] %>
+
+production:
+  url: <%= ENV['DB_URL'] %>
