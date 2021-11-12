@@ -47,15 +47,16 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'haml-rails'
+
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
   gem 'debug', '>= 1.0.0', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', require: false
-<<<<<<< HEAD
   gem 'rspec-rails'
-=======
   gem 'rubocop-rspec'
->>>>>>> 5d4c0fe... fixup! Add and install annotate, rubocop and rspec gems
+  gem 'rspec-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -74,7 +75,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '>= 3.26'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'factory_bot_rails'
 end
