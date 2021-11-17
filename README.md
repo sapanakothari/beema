@@ -1,24 +1,71 @@
-# README
+# beema
+rails full-stack app Vehicle Fleet and customer management user story
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 * Ruby version
+    ruby-2.7.4
+
+* Postgres
+    postgresql-11
+
+* Redis
+    redis 4
+
 
 * System dependencies
 
-* Configuration
+    1. To install dependencies use rvm to create a gemset
+    
+    ```
+       $ rvm gemset use beem --create
+       $ rvm-prompt
+         ruby-2.7.4@beema
+    ```
+    
+    2. We've now created an isolated environment to install our dependencies. Let's
+       install our dependency manager
+       
+    ```
+        $ gem install bundler
+        $ bundle --version
+          Bundler version 2.1.4
 
-* Database creation
+    ```
 
-* Database initialization
+    3. Install dependencies
 
-* How to run the test suite
+    ```
+        $ bundle install
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+    4. Create databases. This creates our development and test databases
 
-* Deployment instructions
+    ```
+        $ cp config/database.yml.sample config/database.yml
+        $ rails db:prepare RAILS_ENV=development
+        $ rails db:prepare RAILS_ENV=test
+    ```
 
-* ...
+    5. Migrate databases
+
+    ```
+        $ rails db:migrate RAILS_ENV=development
+        $ rails db:test:prepare OR rails db:migrate RAILS_ENV=test
+    ```
+
+    6. Ensure redis is running (not required for csv story)
+    7. Install direnv and create .envrc file in the application root to install development env specific configurations
+           Follow directions here https://direnv.net/
+    ```
+        # local configs
+        export DB_URL=postgres://sapanakothari@localhost/beema_development
+        export RAILS_ENV=development    
+    ```
+
+    8. Run tests to verify everything is working
+    
+    ```
+        $ rspec spec/
+    ```
