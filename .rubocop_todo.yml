@@ -1,0 +1,20 @@
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 100
+
+Style/GuardClause:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 50
+
+Layout/LineLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10

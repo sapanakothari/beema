@@ -1,0 +1,6 @@
+=turbo_frame_tag 'search_results' do
+  - if @vehicles
+    - if @vehicles.count.zero?
+      %h3.break-normal.text-gray-600.mt-5= t('search.no_records')
+    - else
+      = render 'listing'

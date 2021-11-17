@@ -1,0 +1,12 @@
+%tr.rounded.shadow
+  %td.py-5.px-10
+    .font-normal.semi-bold= vehicle.customer.name
+    .text-gray-400.text-sm= "#{vehicle.customer.nationality} | #{vehicle.customer.email}"
+  %td.py-5.px-10
+    .font-normal.semi-bold= vehicle.model
+    .text-gray-400.text-sm= "#{vehicle.year} | #{vehicle.color}"
+  %td.py-5.px-10
+    .font-normal.semi-bold= vehicle.chassis_number
+    .text-gray-400.text-sm= l(vehicle.registration_date, format: :readable)
+  %td.py-5.px-10
+    .font-normal.semi-bold= vehicle.latest_reading.value

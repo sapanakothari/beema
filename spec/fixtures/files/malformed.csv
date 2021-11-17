@@ -1,0 +1,6 @@
+"this","is",123,"a","normal","line"
+"line","with "an" internal","quote"
+"short line","with
+an
+"internal quote", 1 comma and
+linebreaks"
