@@ -1,0 +1,8 @@
+=form_tag(export_vehicles_path, method: :get) do
+  .max-w-xl.mx-auto.flex.flex-wrap.items-center
+  =label_tag "report_type", t('report.type'),
+    class: 'text-gray-400'
+  =select_tag 'report_type', options_for_select(VehicleReportService.report_types), include_blank: true,
+    class: 'border-gray-400 shadow-md p-3 text-gray-600 mr-2 rounded focus:outline-none'
+  =submit_tag t('export.label'), data: { disable_with: false },
+    class: 'w-1/6 bg-green-500 text-white text-base font-semibold py-3 rounded shadow hover:bg-green-400'

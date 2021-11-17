@@ -1,0 +1,13 @@
+=turbo_frame_tag 'imported_data' do
+  - if @response
+    - if @response.success?
+      - if @response.import_summary[:total_csv_record].zero?
+        %h3.break-normal.text-gray-600.mt-5= t('import.no_records')
+      - else
+        %h3.break-normal.text-gray-600.mt-5= t('import.summary',
+          imported_count: @response.import_summary[:imported_count],
+          failed_count:  @response.import_summary[:failed_count] )
+        - if @response.import_summary[:imported_count] > 0
+          = render 'listing'
+    - else
+      %h3.break-normal.text-gray-600.mt-5= @response.errors.first

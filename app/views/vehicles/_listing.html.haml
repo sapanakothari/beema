@@ -1,0 +1,18 @@
+%table.rounded-lg.shadow-md.text-gray-600.text-sm.table-auto.max-w-full.m-auto.mt-8
+  %thead
+    %tr.rounded.shadow.bg-green-200
+      %th.py-5.px-10
+        .font-normal.semi-bold= 'Customer Name'
+        .text-gray-400.text-sm= 'Nationality | Email'
+      %th.py-5.px-10
+        .font-normal.semi-bold= 'Model'
+        .text-gray-400.text-sm= 'Year | Color'
+      %th.py-5.px-10
+        .font-normal.semi-bold= 'Chassis Number'
+        .text-gray-400.text-sm= 'Registration Date'
+      %th.py-5.px-10
+        .font-normal.semi-bold= 'Latest Odometer Reading'
+  %tbody
+    = render @vehicles
+
+

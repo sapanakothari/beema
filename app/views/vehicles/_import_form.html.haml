@@ -1,0 +1,6 @@
+=form_tag(import_vehicles_path, data: {turbo_frame: 'imported_data'}, method: :post, multipart: true) do
+  .max-w-xl.mx-auto.flex.flex-wrap.items-center
+  =file_field_tag :vehicle,  :accept => 'text/csv',
+        class: 'border-gray-400 shadow-md p-3 text-gray-600 mr-2 rounded focus:outline-none'
+  =submit_tag t('import.label'), data: { disable_with: false },
+        class: 'w-1/6 bg-green-500 text-white text-base font-semibold py-3 rounded shadow hover:bg-green-400'
